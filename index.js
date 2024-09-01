@@ -1,4 +1,5 @@
 const express = require("express"); // Import the express module
+const axios = require("axios"); // Import the axios module
 const app = express(); // Create an instance of express
 const port = process.env.PORT || 3001; // Define the port to run the server
 
@@ -40,4 +41,14 @@ app.get("/api/data", (req, res) => {
 // Start the server and listen on the defined port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+
+  // Automatically send a POST request after the server starts
+  axios
+    .post(`http://localhost:${port}/`, { data: "complete!" })
+    .then((response) => {
+      console.log("POST request sent successfully:", response.data);
+    })
+    .catch((error) => {
+      console.error("Error sending POST request:", error);
+    });
 });
