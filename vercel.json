@@ -1,4 +1,4 @@
-{
+  {
     "version": 2,
     "builds": [
       {
@@ -8,7 +8,11 @@
     ],
     "routes": [
       {
-        "src": "/functions/v1/junior-dev",
+        "src": "/api/data",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/(.*)",
         "dest": "/index.js"
       }
     ]

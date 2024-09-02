@@ -44,7 +44,7 @@ app.listen(port, () => {
 
   // Automatically send a POST request after the server starts
   axios
-    .post(`http://localhost:${port}/`, { data: "complete!" })
+    .post(`http://localhost:${port}/`, { data: "" })
     .then((response) => {
       console.log("POST request sent successfully:", response.data);
     })
